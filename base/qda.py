@@ -34,13 +34,9 @@ class QDA(BaseBayesianClassifier):
     self.inv_covs = [LA.inv(np.cov(X[:,y.flatten()==idx], bias=True))
                       for idx in range(len(self.log_a_priori))]
 
-    print(f"Cantidad de Inversas de la covarianza: {len(self.inv_covs)} [Formato: {self.inv_covs[0].shape}]")
-
     self.means = [X[:,y.flatten()==idx].mean(axis=1, keepdims=True)
                   for idx in range(len(self.log_a_priori))]
     
-    print(f"Cantidad de medias: {len(self.means)} [Formato: {self.means[0].shape}]")
-
   def _predict_log_conditional(self, x, class_idx):
     """
     Devuelve el logaritmo de la densidad condicional (hasta constante) para la clase `class_idx`:

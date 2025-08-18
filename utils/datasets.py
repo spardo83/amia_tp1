@@ -28,9 +28,7 @@ def get_wine_dataset():
     data = load_wine()
     X_full = data.data
     y_full = np.array([data.target_names[y] for y in data.target.reshape(-1,1)])
-    feature_names = data.feature_names  # lista de nombres de características
-    label_names   = data.target_names   # lista de nombres de clases
-    return X_full, y_full, feature_names, label_names
+    return X_full, y_full
 
 def get_letters_dataset():
     # get data
