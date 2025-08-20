@@ -41,3 +41,4 @@ def label_encode(y_full):
 def split_transpose(X, y, test_size, random_state):
     # X_train, X_test, y_train, y_test but all transposed
     return [elem.T for elem in train_test_split(X, y, test_size=test_size, random_state=random_state)]
+
