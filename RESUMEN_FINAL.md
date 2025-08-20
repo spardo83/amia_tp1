@@ -1,23 +1,33 @@
 # TP 2: LDA/QDA y optimización matemática - RESUMEN FINAL
 
-## ✅ Implementaciones Completadas
+    
+    ## Integrantes
+    
+    - Pardo, Sebastián
+    - González, Martín
+    - Brazón, Josmar
+    - Losada, Ricardo
+  
+
+
+##  Implementaciones Completadas
 
 Todas las implementaciones requeridas han sido completadas y funcionan correctamente:
 
 ### 1. **Tensorización** (Preguntas 1-7)
-- ✅ `QDA`: Implementación estándar
-- ✅ `TensorizedQDA`: Paraleliza sobre clases
-- ✅ `FasterQDA`: Elimina ciclo for en predicción
-- ✅ `EfficientQDA`: Usa propiedad matemática para evitar matriz n×n
+-  `QDA`: Implementación estándar
+-  `TensorizedQDA`: Paraleliza sobre clases
+-  `FasterQDA`: Elimina ciclo for en predicción
+-  `EfficientQDA`: Usa propiedad matemática para evitar matriz n×n
 
 ### 2. **Factorización de Cholesky** (Preguntas 8-13)
-- ✅ `QDA_Chol1`: Usa `LA.inv(cholesky(...))`
-- ✅ `QDA_Chol2`: Usa `solve_triangular` (más eficiente)
-- ✅ `QDA_Chol3`: Usa `dtrtri` (LAPACK)
-- ✅ `TensorizedChol`: Combina tensorización con Cholesky
-- ✅ `EfficientChol`: Implementación más optimizada
+-  `QDA_Chol1`: Usa `LA.inv(cholesky(...))`
+-  `QDA_Chol2`: Usa `solve_triangular` (más eficiente)
+-  `QDA_Chol3`: Usa `dtrtri` (LAPACK)
+-  `TensorizedChol`: Combina tensorización con Cholesky
+-  `EfficientChol`: Implementación más optimizada
 
-## 📊 Resultados de Testing
+##  Resultados de Testing
 
 Todas las implementaciones mantienen la misma precisión:
 - **Accuracy**: 0.981 (98.1%)
@@ -40,7 +50,7 @@ Todas las implementaciones mantienen la misma precisión:
 - `README.md`: Instrucciones de uso
 - `requirements.txt`: Dependencias
 
-## 🎯 Respuestas a Preguntas Clave
+## Respuestas a Preguntas Clave
 
 ### Pregunta 1: ¿Sobre qué paraleliza TensorizedQDA?
 **Respuesta**: TensorizedQDA paraleliza sobre las **k clases**, no sobre las n observaciones. Usa operaciones tensoriales para calcular la forma cuadrática para todas las clases simultáneamente.
@@ -61,7 +71,7 @@ Todas las implementaciones mantienen la misma precisión:
 - **Chol2**: Usa `solve_triangular` (más eficiente)
 - **Chol3**: Usa LAPACK para L^(-1)
 
-## 🚀 Cómo Usar
+## Cómo Usar
 
 ### 1. Instalar dependencias
 ```bash
@@ -89,7 +99,7 @@ model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 ```
 
-## 📈 Optimizaciones Implementadas
+## Optimizaciones Implementadas
 
 ### 1. **Tensorización**
 - Usar `np.stack()` para paralelizar sobre clases
@@ -107,7 +117,7 @@ predictions = model.predict(X_test)
 - Usar `solve_triangular` en lugar de inversión
 - Aprovechar la estructura triangular de L
 
-## 🎓 Conceptos Clave Aprendidos
+## Conceptos Clave Aprendidos
 
 1. **Clasificación Bayesiana**: Entender la regla de decisión de Bayes
 2. **Forma Cuadrática**: Optimizar el cálculo de `(x-μ)^T Σ^(-1) (x-μ)`
@@ -115,7 +125,7 @@ predictions = model.predict(X_test)
 4. **Factorización de Cholesky**: Usar LL^T para optimizar inversiones
 5. **Optimización Numérica**: Balancear precisión, velocidad y memoria
 
-## 🔍 Análisis de Performance
+## Análisis de Performance
 
 Basándome en la teoría y las implementaciones:
 
@@ -124,7 +134,7 @@ Basándome en la teoría y las implementaciones:
 3. **Cholesky**: Chol2 debería ser el más eficiente por usar `solve_triangular`
 4. **Combinaciones**: EfficientChol debería ser la implementación más optimizada
 
-## 📝 Versiones Utilizadas
+## Versiones Utilizadas
 
 - **Python**: 3.13.5
 - **NumPy**: 2.3.2
@@ -133,14 +143,3 @@ Basándome en la teoría y las implementaciones:
 - **pandas**: 2.3.1
 - **tqdm**: 4.67.1
 
-## ✅ Estado Final
-
-**TODAS LAS IMPLEMENTACIONES FUNCIONAN CORRECTAMENTE**
-
-- ✅ 9/9 implementaciones funcionando
-- ✅ Misma precisión (0.981) en todas
-- ✅ Respuestas teóricas completas
-- ✅ Documentación completa
-- ✅ Scripts de prueba funcionales
-
-El trabajo práctico está **COMPLETADO** y listo para entrega. 
