@@ -1,4 +1,16 @@
-# Respuestas Teóricas - TP 2: LDA/QDA y optimización matemática
+# TP 1: LDA/QDA y optimización matemática
+
+Integrantes:
+
+- Brazón, Josmar
+
+- Pardo, Sebastián
+
+- González, Martín
+
+- Losada, Ricardo
+
+## Respuestas Teóricas 
 
 ## Pregunta 1: Diferencias entre QDA y TensorizedQDA
 
